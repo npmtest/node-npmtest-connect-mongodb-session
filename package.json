@@ -1,1 +1,40 @@
-{     "devDependencies": {         "connect-mongodb-session": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-connect-mongodb-session",     "homepage": "https://github.com/npmtest/node-npmtest-connect-mongodb-session",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-connect-mongodb-session.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "test coverage for [connect-mongodb-session (v1.3.0)](https://github.com/mongodb-js/connect-mongodb-session#readme) [![npm package](https://img.shields.io/npm/v/npmtest-connect-mongodb-session.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-connect-mongodb-session) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-connect-mongodb-session.svg)](https://travis-ci.org/npmtest/node-npmtest-connect-mongodb-session)",
+    "devDependencies": {
+        "connect-mongodb-session": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-connect-mongodb-session",
+    "keywords": [
+        "coverage",
+        "test",
+        "connect-mongodb-session"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_connect_mongodb_session.js",
+    "name": "npmtest-connect-mongodb-session",
+    "nameAlias": "npmtest_connect_mongodb_session",
+    "nameOriginal": "npmtest-connect-mongodb-session",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-connect-mongodb-session.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
